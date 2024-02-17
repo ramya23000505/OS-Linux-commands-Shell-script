@@ -42,13 +42,20 @@ s.n. dasgupta
 ### Display the content of the files
 cat < file1
 ## OUTPUT
-
-
-
+```
+chanchal singhvi
+c.k. shukla
+s.n. dasgupta
+sumit chakrobarty
+```
 cat < file2
 ## OUTPUT
-
-
+```
+chanchal singhvi
+c.k. shukla
+s.n. dasgupta
+sumit chakrobarty
+```
 # Comparing Files
 cmp file1 file2
 ## OUTPUT
@@ -79,22 +86,26 @@ cat > file22
 ^d
 ```
 
-
 cut -c1-3 file11
 ## OUTPUT
-
-
-
-
+```
+Hel
+Thi
+```
 cut -d "|" -f 1 file22
 ## OUTPUT
-
-
-
+```
+1001
+1002
+1003
+```
 cut -d "|" -f 2 file22
 ## OUTPUT
-
-
+```
+ Ram
+ tom
+ Joe
+```
 cat < newfile 
 ```
 Hello world
