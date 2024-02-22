@@ -185,7 +185,6 @@ Unix is predecessor
 Linux is best in this World
 ^d
 ```
-
 cat > newfile
 ```
 Hello world
