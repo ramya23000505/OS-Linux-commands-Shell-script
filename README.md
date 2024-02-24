@@ -61,15 +61,6 @@ cmp file1 file2
 ## OUTPUT
 ```
 file1 file2 differ: char 1, line 1
-localhost:~# comm file1 file2
-        anil aggarwal
-        barun sengupta
-        c.k. shukla
-chanchal singhvi
-c.k. shukla
-        lalit chowdury
-                s.n. dasgupta
-sumit chakrobarty
 ```
 comm file1 file2
  ## OUTPUT
