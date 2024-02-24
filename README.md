@@ -215,11 +215,6 @@ egrep '(^hello)' newfile
 ```
 hello world
 ```
-egrep '(world$)' newfile 
-## OUTPUT
-
-
-
 egrep '(World$)' newfile 
 ## OUTPUT
 ```
