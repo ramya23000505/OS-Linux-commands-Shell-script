@@ -493,11 +493,30 @@ mv backup.tar backupdir
  
 tar -tvf backup.tar
 ## OUTPUT
-
-
+```
+-rw-r--r-- root/root       114 2020-07-05 23:17:07 bench.py
+-rw-r--r-- root/root       131 2024-02-24 09:25:54 file21
+-rw-r--r-- root/root       155 2024-02-24 09:29:21 file22
+-rw-r--r-- root/root       210 2024-02-24 09:14:03 file23
+-rw-r--r-- root/root        76 2020-07-03 14:45:56 hello.c
+-rw-r--r-- root/root        22 2020-06-26 14:57:33 hello.js
+-rw-r--r-- root/root        96 2024-02-24 09:12:14 newfile
+-rw-r--r-- root/root       151 2020-07-05 23:19:13 readme.txt
+-rw-r--r-- root/root        52 2024-02-24 09:33:40 urllist.txt
+```
 tar -xvf backup.tar
 ## OUTPUT
-
+```
+bench.py
+file21
+file22
+file23
+hello.c
+hello.js
+newfile
+readme.txt
+urllist.txt
+```
 gzip backup.tar
 
 ls .gz
