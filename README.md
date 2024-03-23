@@ -521,11 +521,14 @@ gzip backup.tar
 
 ls .gz
 ## OUTPUT
- 
+```
+backup.tar.gz
+```
 gunzip backup.tar.gz
 ## OUTPUT
-
- 
+```
+ backup.tar
+```
 # Shell Script
 ```
 echo '#!/bin/sh' > my-script.sh
@@ -534,8 +537,9 @@ echo 'echo Hello World‘; exit 0 >> my-script.sh
 chmod 755 my-script.sh
 ./my-script.sh
 ## OUTPUT
-
- 
+```
+ echo Hello World
+```
 cat << stop > herecheck.txt
 ```
 hello in this world
@@ -546,8 +550,11 @@ stop
 
 cat herecheck.txt
 ## OUTPUT
-
-
+```
+hello in this world
+i cant stop
+for this non stop movement
+```
 cat < scriptest.sh 
 ```bash
 \#!/bin/sh
@@ -584,26 +591,37 @@ chmod 777 scriptest.sh
 ./scriptest.sh 1 2 3
 
 ## OUTPUT
-
- 
+```
+ File name is ./scriptest.sh
+File name is scriptest.sh
+First arg. is 1
+Second arg. is 2
+Third arg. is 3
+Fourth arg. is
+The $@ is 1 2 3
+The $\# is $#
+The $$ is 124
+ ```
 ls file1
 ## OUTPUT
-
+```
+file1
+```
 echo $?
 ## OUTPUT 
-./one
-bash: ./one: Permission denied
- 
+```
+0
+```
 echo $?
 ## OUTPUT 
- 
+``` 
 abcd
- 
+ ```
 echo $?
  ## OUTPUT
-
-
- 
+```
+1
+ ```
 # mis-using string comparisons
 
 cat < strcomp.sh 
@@ -633,15 +651,22 @@ echo "$val1 is less than $val2"
 fi
 ```
 ##OUTPUT
-
-
-
-chmod 755 strcomp.sh
- 
+```
+val1=baseball
+val2=hockey
+if [ $val1 \> $val2 ]
+then
+echo "$val1 is greater than $val2"
+else
+echo "$val1 is less than $val2"
+fi
+```
+chmod 755 strcomp.sh 
 ./strcomp.sh 
 ## OUTPUT
-
-
+```
+baseball is less than hockey
+```
 # check file ownership
 cat < psswdperm.sh 
 ```bash
@@ -667,7 +692,9 @@ fi
  ```
 ./psswdperm.sh
 ## OUTPUT
-
+```
+You are the owner of the /etc/passwd file
+```
 # check if with file location
 cat>ifnested.sh 
 ```bash
@@ -713,9 +740,10 @@ fi
 
 ./ifnested.sh 
 ## OUTPUT
-
-
-
+```
+**/root The object exists, is it a file?
+No,/root it is not a file!
+```
 # using numeric test comparisons
 cat > iftest.sh 
 ```bash
@@ -757,7 +785,9 @@ $ chmod 755 iftest.sh
  
 $ ./iftest.sh 
 ##OUTPUT
-
+```
+“The test value 10 is greater than 5” “The values are different”
+```
 # check if a file
 cat > ifnested.sh 
 ```bash
@@ -806,7 +836,9 @@ $ chmod 755 ifnested.sh
  
 $ ./ifnested.sh 
 ##OUTPUT
-
+```
+“/root The object exists, is it a file?” “No,/root it is not a file!”
+```
 # looking for a possible value using elif
 cat elifcheck.sh 
 ```bash
@@ -834,8 +866,9 @@ $ chmod 755 elifcheck.sh
  
 $ ./elifcheck.sh 
 ## OUTPUT
-
-
+```
+Welcome Ram Please enjoy your visit
+```
 # testing compound comparisons
 cat> ifcompound.sh 
 ```bash
@@ -850,7 +883,9 @@ fi
 $ chmod 755 ifcompound.sh
 $ ./ifcompound.sh 
 ## OUTPUT
-
+```
+The file exists and you can write to it
+```
 # using the case command
 cat >casecheck.sh 
 ```bash
@@ -897,9 +932,11 @@ var1=$[ $var1 - 25 ]
 done
 ``` 
 $ chmod 755 untiltest.sh
- 
- 
- 
+$ ./whiletes.sh 
+## OUTPUT 
+```
+10 9 8 7 6 5 4 3 2 1
+ ```
 cat forin1.sh 
 ```bash
 \#!/bin/bash
@@ -961,6 +998,9 @@ done
 $ chmod 755 forin1.sh
 
 ## OUTPUT
+```
+word:I word:don't word:know word:if word:this'll word:work cat forinfile.sh
+```
 cat forinfile.sh 
 ```bash
 #!/bin/bash
@@ -982,8 +1022,15 @@ Bhadrachalam
 Khammam
 
 ## OUTPUT
-
-
+```
+Visit beautifull Hyderabad
+Visit beautifull Alampur
+Visit beautifull Basara
+Visit beautifull Warangal
+Visit beautifull Adilabad
+Visit beautifull Bhadrachalam
+Visit beautifull Khammam
+```
 cat forctype.sh 
 ```bash
 #!/bin/bash
@@ -996,7 +1043,13 @@ done
 $ chmod 755 forctype.sh
 $ ./forctype.sh 
 ## OUTPUT
-
+```
+The value of i is 1
+The value of i is 2
+The value of i is 3
+The value of i is 4 
+The value of i is 5
+```
 cat forctype1.sh 
 ```bash
 #!/bin/bash
@@ -1008,7 +1061,6 @@ done
 ```
 $ chmod 755 forctype.sh
 $ ./forctype1.sh 
-## OUTPUT
 
 cat fornested1.sh 
 ```bash
@@ -1026,8 +1078,6 @@ done
 $ chmod 755 fornested1.sh
  
 $ ./fornested1.sh 
- ## OUTPUT
-
  
 cat forbreak.sh 
 ```bash
@@ -1044,9 +1094,14 @@ done
 echo "The for loop is completed“
 ```
 ## OUTPUT
-
+```
+1 - 5
+2 - 4
+3 - 3
+4 - 2
+5 - 1
+```
 $ chmod 755 forbreak.sh
- 
 $ ./forbreak.sh 
  
 cat forbreak.sh 
@@ -1063,13 +1118,17 @@ echo "Iteration number: $var1"
 done
 echo "The for loop is completed“
 ```
-
- 
 $ chmod 755 forcontinue.sh
  
 $ ./forcontinue.sh 
 ## OUTPUT
- 
+ ```
+Iteration number: 1
+Iteration number: 2
+Iteration number: 3
+Iteration number: 4
+Iteration number: 5
+```
 cat exread.sh 
 ```bash
 #!/bin/bash
@@ -1083,8 +1142,10 @@ $ chmod 755 exread.sh
  
 $ ./exread.sh 
 ## OUTPUT
-
-
+```
+Enter your name:Ramya
+Hello Ramya, welcome to my program.
+```
  cat exread1.sh
 ```bash
 #!/bin/bash
@@ -1095,9 +1156,10 @@ echo "Hello $name, welcome to my program. “
 $ chmod 755 exread1.sh 
 
 ## OUTPUT
-
-
-
+```
+Enter your name:Ramya
+Hello Ramya, welcome to my program.
+```
 $ ./exread1.sh 
  
 cat funcex.sh
@@ -1116,11 +1178,12 @@ echo "Usage: badtest1 a b"
 fi
 ```
 ## OUTPUT
+```
+$ bash script.sh 1 2
+The result is 2
+```
  ./funcex.sh 
-
- 
  ./funcex.sh 1 2
-
  
 cat argshift.sh
 ```bash
@@ -1162,10 +1225,11 @@ while (( "$#" )); do
 done
 set +x
 ```
-## OUTPUT
  ./argshift.sh 1 2 3
- 
- 
+## OUTPUT
+ ```
+ + (( 0 ))
++ set =X
 cat > nc.awk
 ```bash
 BEGIN{}
@@ -1195,7 +1259,11 @@ ubcdfghj
 ```
 awk -f nc.awk data.dat
 ## OUTPUT 
- 
+ ```
+Total characters 75
+Number if lines are 10
+No of words count: 10
+```
 cat > palindrome.sh
 ```bash
 #num=545
@@ -1222,7 +1290,13 @@ else
 fi
 ```
 ## OUTPUT 
-
-
+```
+Enter the number
+121
+Number is palindrome
+Enter the number
+69
+Number is NOT palindrome
+```
 # RESULT:
 The Commands are executed successfully.
